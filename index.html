@@ -48,18 +48,14 @@ button:hover{border-color:var(--acc)}
 .bk::before{content:"";position:absolute;left:0;top:0;bottom:0;width:14px;background:linear-gradient(90deg,rgba(0,0,0,.28),transparent);z-index:3;pointer-events:none}
 .bk img{display:block;max-width:100%;max-height:calc(100vh - 190px);max-height:calc(100dvh - 190px);width:auto;height:auto;border-radius:3px 7px 7px 3px}
 
-/* 책장 넘기기: 넘어가는 한 장이 왼쪽 책등을 축으로 돌아가요 */
-.leaf{position:absolute;left:0;top:0;z-index:2;transform-origin:left center;-webkit-backface-visibility:hidden;backface-visibility:hidden;border-radius:3px 7px 7px 3px;box-shadow:10px 0 28px rgba(0,0,0,.4);pointer-events:none;will-change:transform}
+/* 슬라이드로 넘기기: 사진이 옆으로 밀려요 */
+.bk{overflow:hidden}
+.leaf{position:absolute;left:0;top:0;z-index:2;pointer-events:none;will-change:transform}
 .bk .leaf img{width:100%;height:100%;max-width:none;max-height:none;border-radius:inherit}
-.leaf::after{content:"";position:absolute;inset:0;border-radius:inherit;background:linear-gradient(90deg,rgba(0,0,0,.5),rgba(0,0,0,.05) 70%);opacity:0}
-.leaf.nx{animation:flipn .62s cubic-bezier(.5,.05,.4,1) forwards}
-.leaf.nx::after{animation:shdn .62s ease-in forwards}
-.leaf.pv{animation:flipp .62s cubic-bezier(.5,.05,.4,1) forwards}
-.leaf.pv::after{animation:shdp .62s ease-out forwards}
-@keyframes flipn{from{transform:rotateY(0)}to{transform:rotateY(-105deg)}}
-@keyframes flipp{from{transform:rotateY(-105deg)}to{transform:rotateY(0)}}
-@keyframes shdn{from{opacity:0}to{opacity:1}}
-@keyframes shdp{from{opacity:1}to{opacity:0}}
+.leaf.nx{animation:sln .35s ease-out forwards}
+.leaf.pv{animation:slp .35s ease-out forwards}
+@keyframes sln{from{transform:translateX(0)}to{transform:translateX(-100%)}}
+@keyframes slp{from{transform:translateX(-100%)}to{transform:translateX(0)}}
 .zn{position:absolute;top:0;bottom:0;z-index:4;cursor:pointer}
 .zn.l,.zn.r{display:none;width:32%}
 .zn.l{left:0}.zn.r{right:0}
@@ -198,9 +194,9 @@ function go(pages,d){
     li.alt="";leaf.style.width=w+"px";leaf.style.height=hh+"px";
     leaf.appendChild(li);
     busy=true;
-    if(d>0){ /* 다음 장: 지금 장이 넘어가면서 다음 장이 아래에서 나타나요 */
+    if(d>0){ /* 다음 장: 지금 장이 왼쪽으로 밀려나요 */
       li.src=im.src;pi=n;im.src=nu;bx.appendChild(leaf);
-    }else{ /* 이전 장: 이전 장이 위에서 덮이듯 넘어와요 */
+    }else{ /* 이전 장: 이전 장이 왼쪽에서 밀려 들어와요 */
       li.src=nu;pi=n;bx.appendChild(leaf);
     }
     setCnt(pages);
@@ -209,7 +205,7 @@ function go(pages,d){
       if(leaf.parentNode)leaf.parentNode.removeChild(leaf);
       busy=false;
       [pi+1,pi-1].forEach(function(k){if(pages[k]){var pr2=new Image();pr2.src=url(pages[k])}});
-    },640);
+    },380);
   }
   pre.onload=start;pre.onerror=start;pre.src=nu;
   if(pre.complete)start();
