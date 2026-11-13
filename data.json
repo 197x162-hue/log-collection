@@ -7,9 +7,22 @@
       "books": [
         {
           "name": "감각 소실",
-          "dir": "images/rael/gamgak-sosil",
-          "count": 14,
-          "ext": "jpg"
+          "pages": [
+            "images/라엘/다운로드.jpg",
+            "images/라엘/다운로드 (1).jpg",
+            "images/라엘/다운로드 (2).jpg",
+            "images/라엘/다운로드 (3).jpg",
+            "images/라엘/다운로드 (4).jpg",
+            "images/라엘/다운로드 (5).jpg",
+            "images/라엘/다운로드 (6).jpg",
+            "images/라엘/다운로드 (7).jpg",
+            "images/라엘/다운로드 (8).jpg",
+            "images/라엘/다운로드 (9).jpg",
+            "images/라엘/다운로드 (10).jpg",
+            "images/라엘/다운로드 (11).jpg",
+            "images/라엘/다운로드 (12).jpg",
+            "images/라엘/다운로드 (13).jpg"
+          ]
         }
       ]
     },
@@ -20,9 +33,26 @@
         {
           "name": "감각소실",
           "pages": [
-            "images/unit/gamgak/01.jpg",
-            "images/unit/gamgak/02.png",
-            "images/unit/gamgak/03.jpg"
+            "images/unit/1.jpg",
+            "images/unit/2.jpg",
+            "images/unit/3.jpg",
+            "images/unit/4.jpg",
+            "images/unit/5.jpg",
+            "images/unit/6.jpg",
+            "images/unit/7.jpg",
+            "images/unit/8.jpg",
+            "images/unit/9.jpg",
+            "images/unit/10.jpg",
+            "images/unit/11.jpg",
+            "images/unit/12.jpg",
+            "images/unit/13.jpg",
+            "images/unit/14.jpg",
+            "images/unit/15.jpg",
+            "images/unit/16.jpg",
+            "images/unit/17.jpg",
+            "images/unit/18.jpg",
+            "images/unit/19.jpg",
+            "images/unit/20.jpg"
           ]
         }
       ]
