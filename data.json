@@ -1,0 +1,31 @@
+{
+  "title": "📚 나의 로그모음~",
+  "folders": [
+    {
+      "name": "라엘",
+      "color": "#f1e2a0",
+      "books": [
+        {
+          "name": "감각 소실",
+          "dir": "images/rael/gamgak-sosil",
+          "count": 14,
+          "ext": "jpg"
+        }
+      ]
+    },
+    {
+      "name": "유닛",
+      "color": "#9dbfe0",
+      "books": [
+        {
+          "name": "감각소실",
+          "pages": [
+            "images/unit/gamgak/01.jpg",
+            "images/unit/gamgak/02.png",
+            "images/unit/gamgak/03.jpg"
+          ]
+        }
+      ]
+    }
+  ]
+}
